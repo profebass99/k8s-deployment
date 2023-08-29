@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devopsacad-app
+  name: my-app
 spec:
   selector:
     matchLabels:
-      app: devopsacad-app
+      app: my-app
   replicas: 2
   template:
     metadata:
       labels:
-        app: devopsacad-app
+        app: my-app
     spec:
       containers:
-      - name: devopsacad-app
+      - name: my-app
         image: 392102158411.dkr.ecr.us-east-2.amazonaws.com/devopsacad-d-image
         ports:
         - containerPort: 8080
