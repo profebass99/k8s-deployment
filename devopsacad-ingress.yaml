@@ -1,7 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: devopsacad-ingress
+  name: mongo-ingress
+  namespace: mongo
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
@@ -14,8 +15,8 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: devopsacad-app
+            name: mongo-express-service
             port:
-              number: 8080
+              number: 8081
 
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/aws/deploy.yaml
+# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/aws/deploy.yaml
